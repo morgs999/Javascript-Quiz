@@ -7,7 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    /* background-image: url(./swirl-purple.gif);  */
+    /* https://tenor.com/en-CA/view/swirl-purple-blue-circle-black-gif-19869207 */
 }
 
 header {
@@ -19,12 +20,22 @@ header {
     /* background-color: var(--color2); */
 }
 
-.answers {
+#start-button {
+    font-size: 150%;
+    margin: 4%;
+    padding: 5%;
+}
+
+.answers li {
     /* list-style-type: none; */
+    padding: 3%;
+    /* margin: 5px; */
 }
 
 .question-block {
     display: none;
+    max-width: 75%;
+
 }
 
 .button {
@@ -34,7 +45,7 @@ header {
     box-shadow: 2px 2px 10px var(--color3);
     margin: 5px;
     padding: 5px;
-    max-width: 15%;
+    /* max-width: 15%; */
     max-height: 50%;
 }
 
