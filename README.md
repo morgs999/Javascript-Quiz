@@ -8,6 +8,9 @@ Live page: https://morgs999.github.io/Javascript-Quiz/
 
 ## Usage
 
+![Starting page](https://github.com/morgs999/Javascript-Quiz/assets/109176008/07d8628f-e9da-4a3a-afc7-a5b8e8670654)
+
+
 From the front page, click the start button to randomly generate a question and answer block.  As you answer correctly your score will increase; as you answer incorrectly, your timer will decrease.  At the end your score is logged into the high score leaderboard (kept in Local Storage).
 
 This is an unfinished application.  Currently the score system is not implemented, so you will only be able to race the clock for now.
