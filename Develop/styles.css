@@ -1,0 +1,43 @@
+:root {
+    --color1: rgb(180, 36, 180);
+    --color2: rgb(142, 141, 141);
+    --color3: #4e2d83;
+    --color4: white;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+header {
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    text-align: center;
+    color: var(--color3);
+    /* background-color: var(--color2); */
+}
+
+.answers {
+    /* list-style-type: none; */
+}
+
+.question-block {
+    display: none;
+}
+
+.button {
+    background-color: var(--color1);
+    color: var(--color4);
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px var(--color3);
+    margin: 5px;
+    padding: 5px;
+    max-width: 15%;
+    max-height: 50%;
+}
+
+.button:hover {
+    opacity: 75%;
+}

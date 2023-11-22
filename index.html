@@ -4,26 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Develop/styles.css">
     <title>Javascript Quiz</title>
 </head>
 
 <body>
     <header>
         <h1>Javascript Quiz</h1>
+        <h2>"Welcome to the Javascript Quiz. Keep going 'til you get a wrong answer, and see how high you score!"</h2>
+        <button class="button" id="start-button">Start the Quiz!</button>
     </header>
 
     <section class="question-block">
-        <h3>Q: </h3>
+        <h3 id="question"></h3>
         <ul class="answers">
-            <li class="answer-one"></li>
-            <li class="answer-two"></li>
-            <li class="answer-three"></li>
-            <li class="answer-four"></li>
+            <li class="answer-one button"></li>
+            <li class="answer-two button"></li>
+            <li class="answer-three button"></li>
+            <li class="answer-four button"></li>
         </ul>
     </section>
-    <section class="high-score">
-
-    </section>
+    <footer>
+        <section class="high-score"></section>
+        <section class="timer"></section>
+    </footer>
+    <script src="./Develop/script.js"></script>
 </body>
 
 </html>

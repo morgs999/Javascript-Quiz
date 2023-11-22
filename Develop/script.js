@@ -28,4 +28,18 @@ var data = [
         a4: "Iteration"
     }
 ]
+timerCount = 60
+currentScore = 0
+let start = document.querySelector("#start-button")
+let qBlock = document.querySelector(".question-block");
 
+start.addEventListener("click", function () {
+    qBlock.setAttribute("style", "display: block");
+
+    generateQuestion()
+
+})
+
+function generateQuestion() {
+
+}
