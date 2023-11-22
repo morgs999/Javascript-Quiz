@@ -6,7 +6,7 @@ var data = [
         a2: "A markup language",
         a3: "A styling language",
         a4: "A romance language",
-        correct: "a1"
+        correct: "A programming language"
     },
     {
         q: "Which method is used to 'click' a button?",
@@ -14,7 +14,7 @@ var data = [
         a2: ".addEventListener",
         a3: ".addClickPoint",
         a4: ".ClickMe",
-        correct: "a2"
+        correct: ".addEventListener"
     },
     {
         q: "Which of the following is NOT a primitive type?",
@@ -22,7 +22,7 @@ var data = [
         a2: "BigInt",
         a3: "Float",
         a4: "String",
-        correct: "a3"
+        correct: "Float"
     },
     {
         q: "What is a 'for' loop used for?",
@@ -30,7 +30,7 @@ var data = [
         a2: "Conditional",
         a3: "Arrays",
         a4: "Iteration",
-        correct: "a4"
+        correct: "Iteration"
     },
     {
         q: "Which is not a variable?",
@@ -38,7 +38,7 @@ var data = [
         a2: "let",
         a3: "type",
         a4: "const",
-        correct: "a3"
+        correct: "type"
     },
     {
         q: "Where does 'console.log' show up?",
@@ -46,7 +46,7 @@ var data = [
         a2: "Under an HTML Element",
         a3: "On top of a button",
         a4: "In the console of Dev Tools",
-        correct: "a4"
+        correct: "In the console of Dev Tools"
     },
     {
         q: "What follows function?",
@@ -54,7 +54,7 @@ var data = [
         a2: "[]",
         a3: "{}",
         a4: "<>",
-        correct: "a1"
+        correct: "()"
     },
     {
         q: "What will help with finding even numbers?",
@@ -62,7 +62,7 @@ var data = [
         a2: "if num % 2 == 0",
         a3: "Find.everyother(num)",
         a4: "Math.floor()",
-        correct: "a2"
+        correct: "if num % 2 == 0"
     },
     {
         q: "Which item does .pop remove?",
@@ -70,7 +70,7 @@ var data = [
         a2: "The middle one",
         a3: "The last one",
         a4: "The chosen one AKA Anakin Skywalker",
-        correct: "a3"
+        correct: "The last one"
     },
     {
         q: "What's the scariest Git Procedure'?",
@@ -78,7 +78,7 @@ var data = [
         a2: "Fetch HEAD Branch",
         a3: "Git Config Rebase",
         a4: "Everyting on Git is scary",
-        correct: "a4"
+        correct: "Everyting on Git is scary"
     }
 ]
 
@@ -91,7 +91,10 @@ let ans1 = document.querySelector("#answer-one");
 let ans2 = document.querySelector("#answer-two");
 let ans3 = document.querySelector("#answer-three");
 let ans4 = document.querySelector("#answer-four");
+let answerChoice = document.querySelector(".answers")
+let rightOrWrong = document.querySelector("#right-or-wrong")
 let timer = document.querySelector(".timer")
+let score = document.querySelector(".score")
 
 
 // START BUTTON BEGINS GAME //
@@ -111,17 +114,24 @@ function generateQuestion() {
     ans2.textContent = index.a2
     ans3.textContent = index.a3
     ans4.textContent = index.a4
-    correctAnswer = index.correct
-    let choice = button.addEventListener("click", function () {
-        return document.getElementById(button)
-    })
-    console.log(choice)
 
+    // CHECK THE ANSWER AND REAP THE CONSEQUENCES //
+    answerChoice.addEventListener("click", function (event) {
+        let guess = event.target.innerText;
+        if (guess == index.correct) {
+            rightOrWrong.textContent = "Nice! One down!";
+            // addToScore()
+        } else {
+            rightOrWrong.textContent = "Nope, sorry!";
+            // deleteTime()
+        }
+        generateQuestion();
+    });
 }
 
 // BEGIN THE TIMER COUNTDOWN //
 function startTimer() {
-    timer.setAttribute("style", "display: inline-block");
+    timer.setAttribute("style", "visibility: visible");
     let count = 100;
     var timeInterval = setInterval(function () {
         if (count >= 1) {
@@ -130,7 +140,15 @@ function startTimer() {
         } else {
             timer.textContent = 'TIME UP!!!';
             clearInterval(timeInterval);
-            // scoreInput();
         }
     }, 1000);
+    // function deleteTime() {
+    //     count = count - 10;
+    // }
+}
+
+function setScore() {
+    score.setAttribute("style", "visibility: visible");
+    let scoreCount = 10;
+    score.textContent = "Score = " + scoreCount;
 }

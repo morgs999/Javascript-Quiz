@@ -51,3 +51,19 @@ if timer == 0 || array is empty, gameover()
 WHEN the game is over
 THEN I can save my initials and my score
 if gameover(), savescore(), start button still available
+
+
+
+//BCS Help to get the button click to return a correct answer
+let answerChoice = document.querySelector(".answers");
+
+let choice = answerChoice.addEventListener("click", function (event) {
+    console.log("CLICK");
+    return document.getElementById(button);
+  });
+
+// To check what click is doing
+let choice = button.addEventListener("click", function () {
+    console.log("CLICK");
+    return document.getElementById(button);
+  });

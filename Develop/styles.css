@@ -10,7 +10,7 @@
 
 body {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
-    background: url(./swirl-purple.gif) no-repeat center center fixed;
+    background: url(../Assets/swirl-purple.gif) no-repeat center center fixed;
     background-size: cover;
     /* https://tenor.com/en-CA/view/swirl-purple-blue-circle-black-gif-19869207 */
 }
@@ -71,7 +71,8 @@ h6 {
 
 /* TIMER AND HIGH SCORE SECTION */
 footer {
-    display: flexbox;
+    display: grid;
+    grid-template-columns: 50%;
 }
 
 .timer {
@@ -80,7 +81,7 @@ footer {
     box-shadow: var(--shadow);
     opacity: 95%;
     color: var(--color3);
-    display: none;
+    visibility: hidden;
     width: 45%;
     position: absolute;
     bottom: 20px;
@@ -90,13 +91,13 @@ footer {
     text-align: center;
 }
 
-.high-score {
+.score {
     background-color: var(--color4);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     opacity: 95%;
     color: var(--color3);
-    display: none;
+    visibility: hidden;
     width: 45%;
     position: absolute;
     bottom: 20px;
