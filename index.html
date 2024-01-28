@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Develop/styles.css">
+    <!-- // bootstrap -->
+    <!-- // jquery -->
+    <link rel="stylesheet" href="Assets/styles.css">
     <title>Javascript Quiz</title>
 </head>
 
@@ -21,10 +23,10 @@
     <section class="question-block">
         <h3 id="question"></h3>
         <ul class="answers">
-            <li class="button" id="answer-one"></li>
-            <li class="button" id="answer-two"></li>
-            <li class="button" id="answer-three"></li>
-            <li class="button" id="answer-four"></li>
+            <li class="button" id="answer-one" onclick="checkAnswer(event)"></li>
+            <li class="button" id="answer-two" onclick="checkAnswer(event)"></li>
+            <li class="button" id="answer-three" onclick="checkAnswer(event)"></li>
+            <li class="button" id="answer-four" onclick="checkAnswer(event)"></li>
         </ul>
         <h3 id="right-or-wrong"></h3>
     </section>
@@ -35,7 +37,7 @@
         <section class="score"></section>
     </footer>
 
-    <script src="./Develop/script.js"></script>
+    <script src="./Assets/script.js"></script>
 </body>
 
 </html>

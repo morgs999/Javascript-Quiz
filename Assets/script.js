@@ -81,7 +81,7 @@ var data = [
         correct: "Everyting on Git is scary"
     }
 ]
-
+let index;
 // ELEMENTS TO INTERACT WITH //
 let start = document.querySelector("#start-button")
 let qBlock = document.querySelector(".question-block");
@@ -108,7 +108,7 @@ start.addEventListener("click", function () {
 
 // GENERATE A RANDOM QUESTION FROM THE data ARRAY //
 function generateQuestion() {
-    let index = data[Math.floor(Math.random() * data.length)]
+    index = data[Math.floor(Math.random() * data.length)]
     question.textContent = index.q
     ans1.textContent = index.a1
     ans2.textContent = index.a2
@@ -117,6 +117,7 @@ function generateQuestion() {
 
     // CHECK THE ANSWER AND REAP THE CONSEQUENCES //
     answerChoice.addEventListener("click", function (event) {
+        console.log(event.target.innerText);
         let guess = event.target.innerText;
         if (guess == index.correct) {
             rightOrWrong.textContent = "Nice! One down!";
@@ -128,7 +129,20 @@ function generateQuestion() {
         generateQuestion();
     });
 }
+let buttons = document.querySelectorAll(".button")
 
+function checkAnswer(event) {
+    console.log(event);
+    let guess = event.target.innerText;
+    if (guess == index.correct) {
+        rightOrWrong.textContent = "Nice! One down!";
+        // addToScore()
+    } else {
+        rightOrWrong.textContent = "Nope, sorry!";
+        // deleteTime()
+    }
+    generateQuestion();
+}
 // BEGIN THE TIMER COUNTDOWN //
 function startTimer() {
     timer.setAttribute("style", "visibility: visible");
